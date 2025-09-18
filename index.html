@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="./image/riotel_logo_72x80.png" type="image/png">
+  <link rel="icon" href="./image/shrushti_resized_72x80.png" type="image/png">
   <title>RIOTEL</title>
 
   <!-- CSS (your existing files) -->
@@ -36,28 +36,38 @@
 </head>
 <body>
   <!--================Header Area =================-->
-  <header class="header_area">
-    <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand logo_h" href="index.html"><img src="./image/riotel_logo_72x80.png" alt=""></a>
-        <h1>RIOTEL</h1>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-        </button>
-
-        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-          <ul class="nav navbar-nav menu_nav ml-auto">
-            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
-            <li class="nav-item"><a class="nav-link" href="accomodation.html">Hotels</a></li>
-            <!-- <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li> -->
-            <li class="nav-item"><a class="nav-link" href="contact.html">Join Riotel</a></li>
-          </ul>
+ <header class="header_area">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <!-- Logo -->
+      <a class="navbar-brand logo_h d-flex align-items-center" href="index.html">
+        <img src="./image/shrushti_resized_72x80.png" alt="Riotel Logo" height="50">
+        <div class="ml-2">
+          <h1 class="mb-0" style="font-size: 1.5rem;">Shrushti Sea Resort</h1>
+          <small class="text-muted">by RIOTEL</small>
         </div>
-      </nav>
-    </div>
-  </header>
+      </a>
+
+      <!-- Mobile toggle -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button>
+
+      <!-- Menu -->
+      <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+        <ul class="nav navbar-nav menu_nav ml-auto">
+          <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="accomodation.html">Hotels</a></li> -->
+          <li class="nav-item"><a class="nav-link" href="contact.html">Join Riotel</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
 
   <!--================Banner Area =================-->
   <section class="banner_area">
@@ -65,111 +75,21 @@
       <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
       <div class="container">
         <div class="banner_content text-center">
-          <h6>Away from monotonous life</h6>
-          <h2>WELCOME TO RIOTEL RESORT'S</h2>
-          <p>Riotel Hotels is a leading hospitality company in India, managing luxury hotels & resorts</p>
+          <h6>Away from the Noise, Close to Nature</h6>
+          <h2>WELCOME TO SHRUSHTI SEA RESORT</h2>
+          <p>Only 2 minutes from the beach, Shrushti Sea Resort offers luxury bathtub rooms, a refreshing swimming pool, and unforgettable live barbecue nights under the stars.</p>
         </div>
       </div>
     </div>
 
-    <!-- Booking area -->
-    <div class="hotel_booking_area position" id="booking-section">
-      <div class="container mt-5">
-        <div class="hotel_booking_table">
-          <div class="col-md-3 d-flex align-items-center justify-content-center">
-            <h2 class="text-center m-0">Book<br> Your Room</h2>
-            </div>
-
-
-          <div class="col-md-9">
-            <div class="boking_table">
-              <div class="row">
-                <!--================Booking Form =================-->
-                <form action="https://api.web3forms.com/submit" method="POST" id="bookingForm">
-                  <input type="hidden" name="access_key" value="05c12067-6d16-4a18-9daf-40c8bc2bf328">
-                  <input type="hidden" name="subject" value="New Booking Request">
-                  <input type="hidden" name="from_name" value="Website Booking Form">
-                  <input type="checkbox" name="botcheck" class="hidden" style="display:none!important">
-
-                  <div class="row">
-                    <div class="col-md-3">
-                      <div class="book_tabel_item">
-                        
-                        <div class="input-group">
-                          <select class="wide form-control" name="resort" required>
-                            <option value="" selected disabled>Resort</option>
-                            <option value="Shrushti Sea Villa">Shrushti Sea Villa</option>
-                            <option value="Prathamesh Valley Resorts">Valley Resorts</option>
-                            <option value="Prathamesh Resort Khed Shivapur">Resort Khed Shivapur</option>
-                            <option value="Prathamesh Resort Khed Shivapur">Go Crazy  Resorts</option>
-                            <option value="Prathamesh Resort Khed Shivapur">Resort Khed Shivapur</option>
-                          </select>
-                        </div>
-
-                        <div class="input-group">
-                          <input type="number" class="form-control" name="rooms" placeholder="No. of Rooms" min="1" required>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-3">
-                      <div class="book_tabel_item">
-                        <div class="form-group">
-                          <div class="input-group date" id="datetimepicker-arrival">
-                            <input type="text" class="form-control" name="arrival_date" placeholder="Arrival Date" required>
-                            <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-                          </div>
-                        </div>
-
-                        <div class="form-group">
-                          <div class="input-group date" id="datetimepicker-departure">
-                            <input type="text" class="form-control" name="departure_date" placeholder="Departure Date" required>
-                            <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-3">
-                      <div class="book_tabel_item">
-                        <div class="input-group">
-                          <input type="text" class="form-control" name="guest_name" placeholder="Your Name" required>
-                        </div>
-                        <div class="input-group">
-                          <input type="email" class="form-control" name="guest_email" placeholder="Your Email" required>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="col-md-3">
-                      <div class="book_tabel_item">
-                        <div class="input-group">
-                          <input type="tel" class="form-control" name="phone"
-                                 placeholder="Contact Number"
-                                 pattern="(\+?\d{1,4}[- ]?)?\d{10}"
-                                 title="Enter a valid phone number"
-                                 required>
-                        </div>
-                        <button type="submit" class="book_now_btn button_hover" style="width:100%;">Submit</button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-                <!--================End Booking Form =================-->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
   </section>
 
 
 <!--================whatsapp =================-->
         <!-- Call Floating Button -->
-<a href="tel:+917030806399"
-   class="call-float">
+<!-- Call Floating Button -->
+<a href="tel:+917030806399" class="call-float">
    <i class="fa fa-phone"></i>
 </a>
 
@@ -179,6 +99,14 @@
    class="whatsapp-float">
    <i class="fa fa-whatsapp"></i>
 </a>
+
+<!-- Instagram Floating Button -->
+<a href="https://www.instagram.com/riotelhotels/" 
+   target="_blank" 
+   class="instagram-float">
+   <i class="fa fa-instagram"></i>
+</a>
+
 
 <!-- Floating Button Styles -->
 
@@ -190,13 +118,13 @@
   <section class="accomodation_area section_gap">
     <div class="container">
       <div class="section_title text-center">
-        <h2 class="title_color">Hotel Accomodation</h2>
-        <p>We all live in an age that belongs to the young at heart. Life that is becoming extremely fast,</p>
+        <h2 class="title_color">Resort Accomodation</h2>
+        <p>Bathtub Bliss, Poolside Views & Cozy Comfort</p>
       </div>
 
       <div class="row mb_30">
         <!-- Hotel 1 -->
-        <div class="col-lg-3 col-sm-6">
+        <div class="col-lg-12 col-sm-12">
           <div class="accomodation_item text-center">
             <div class="hotel_img">
               <img src="./image/Shrushti see villa/IMG-20250908-WA0021.jpg" alt="Resort Image" class="uniform-img">
@@ -226,14 +154,17 @@
                           </ol>
 
                           <div class="carousel-inner" style="height:350px;">
-                            <div class="carousel-item active">
-                              <img src="./image/Shrushti see villa/IMG-20250908-WA0017.jpg" class="d-block w-100" alt="Villa" style="height:350px; object-fit:cover;">
-                            </div>
-                            <div class="carousel-item">
+
+                             <div class="carousel-item active">
                               <img src="./image/Shrushti see villa/IMG-20250908-WA0021.jpg" class="d-block w-100" alt="Villa" style="height:350px; object-fit:cover;">
                             </div>
+
                             <div class="carousel-item">
-                              <img src="./image/Shrushti see villa/IMG-20250908-WA0019.jpg" class="d-block w-100" alt="Villa" style="height:350px; object-fit:cover;">
+                              <img src="./image/Shrushti see villa/IMG-20250908-WA0020.jpg" class="d-block w-100" alt="Villa" style="height:350px; object-fit:cover;">
+                            </div>
+                           
+                            <div class="carousel-item">
+                              <img src="./image/Shrushti see villa/IMG-20250908-WA0022.jpg" class="d-block w-100" alt="Villa" style="height:350px; object-fit:cover;">
                             </div>
                           </div>
 
@@ -280,7 +211,7 @@
                         <div class="col-6 col-md-4 col-lg-3 mb-3"><img src="./image/Shrushti see villa/IMG-20250908-WA0018.jpg" class="img-fluid uniform-img" alt=""></div>
                       </div>
 
-                      <h5>Location</h5>
+                      <h5 class="mt-3">Location</h5>
                       <iframe class="mt-3" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6211.64772148274!2d72.9841698929899!3d18.184819858916374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be84f2eda286aed%3A0x42f7110484f516cf!2sSrushti%20Sea%20Villa!5e0!3m2!1sen!2sin!4v1757387786263!5m2!1sen!2sin"
                         width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
@@ -297,224 +228,13 @@
               </div>
             </div>
 
-            <a><h4 class="sec_h4">Shrushti Sea <br> Villa Resort</h4></a>
-            <h5>₹.2,500<small>/night</small></h5>
+            <a><h4 class="sec_h4">Shrushti Sea <br> Resort</h4></a>
+            <h5>₹.4,000<small>/night</small></h5>
           </div>
         </div>
 
-        <!-- Hotel 2 (Prathamesh Valley Resorts) -->
-        <div class="col-lg-3 col-sm-6">
-          <div class="accomodation_item text-center">
-            <div class="hotel_img">
-              <img src="./image/Pratemesh Vaaly Resort 1/1.webp" alt="Resort Image" class="uniform-img">
-              <div class="text-center mt-5">
-                <button class="btn theme_btn button_hover" data-toggle="modal" data-target="#hotelModalSingle1">Show Hotel</button>
-              </div>
 
-              <!-- Modal for Prathamesh Valley Resorts -->
-              <div class="modal fade" id="hotelModalSingle1" tabindex="-1" role="dialog" aria-labelledby="hotelModalSingle1Label" aria-hidden="true">
-                <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h3 class="modal-title" id="hotelModalSingle1Label" style="font-weight:700;">Prathamesh Valley Resorts</h3>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size:28px;"><span aria-hidden="true">&times;</span></button>
-                    </div>
-                    <div class="modal-body" style="padding:1.5rem;">
-                      <div class="row mb-4 align-items-start">
-                        <div class="col-lg-6 mb-3 mb-lg-0">
-                          <!-- video: embed form (muted autoplay when modal opens handled by script) -->
-                          <iframe id="video-hotelModalSingle1" width="100%" height="315"
-                                  src="https://www.youtube.com/embed/3q5KH0hJzsE?start=1&enablejsapi=1"
-                                  title="Prathamesh Valley Resorts video" frameborder="0"
-                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                  allowfullscreen></iframe>
-                        </div>
-
-                        <div class="col-lg-6 text-left-for-modal">
-                          <h4>Welcome to Prathamesh Valley Resorts</h4>
-                          <p>At Prathamesh Valley Resorts Mahabaleshwar, you’ll find just that. Tucked away in the
-                            heart of the Western Ghats, it’s the perfect spot to unwind, explore, and make special
-                            memories.</p>
-
-                          <p><strong>Our Stay Packages Starting From ₹7999/-</strong></p>
-
-                          <ul style="padding-left:20px; margin-bottom:20px;">
-                            <li>Extra Person: ₹2499/-</li>
-                            <li>Child 5–11 Years: ₹1500/-</li>
-                            <li>Child Between 3–5 Years: ₹800/-</li>
-                            <li>Below 3 Years: Free</li>
-                            <li>All Activities & Amenities Included</li>
-                            <li>All Meals Included</li>
-                            <li>15+ Indoor Games Included</li>
-                            <li>Stay | Television | Hot Water</li>
-                            <li>Check In: 12.00 PM</li>
-                            <li>Check Out: 10.00 AM</li>
-                          </ul>
-
-                            <a href="#booking-section"
-                            class="btn modal-to-book"
-                            data-dismiss="modal"
-                            style="background-color:#28a745; border-color:#28a745; color:#fff;">
-                            Book Now
-                            </a>
-                        </div>
-                      </div>
-
-                      <hr>
-                      <h5>Gallery</h5>
-                      <div class="row mt-3">
-                        <div class="col-6 col-md-4 col-lg-3 mb-3"><img src="./image/Pratemesh Vaaly Resort 1/2.webp" class="uniform-img" alt=""></div>
-                        <div class="col-6 col-md-4 col-lg-3 mb-3"><img src="./image/Pratemesh Vaaly Resort 1/3.webp" class="uniform-img" alt=""></div>
-                        <div class="col-6 col-md-4 col-lg-3 mb-3"><img src="./image/Pratemesh Vaaly Resort 1/4.webp" class="uniform-img" alt=""></div>
-                        <div class="col-6 col-md-4 col-lg-3 mb-3"><img src="./image/Pratemesh Vaaly Resort 1/5.webp" class="uniform-img" alt=""></div>
-                      </div>
-
-                      <hr>
-                      <h5>Location</h5>
-                      <iframe class="mt-3" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d485963.37468117534!2d73.77294800000001!3d17.904668!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc26926a368c05b%3A0xbd1de2d2046db50f!2sPrathamesh%20Valley%20Resort%20by%20Nexottel!5e0!3m2!1sen!2sus!4v1757052918058!5m2!1sen!2sus"
-                              width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-
-                    <div class="modal-footer"><small class="text-muted">RIOTEL</small></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <a><h4 class="sec_h4">Prathamesh Valley <br> Resorts</h4></a>
-            <h5>₹.7,999<small>/night</small></h5>
-          </div>
-        </div>
-
-        <!-- Hotel 3 -->
-        <div class="col-lg-3 col-sm-6">
-          <div class="accomodation_item text-center">
-            <div class="hotel_img">
-              <img src="./image/Prathamesh Resort Khed Shivapur1/1.jpg"
-                   alt="Resort Image" class="uniform-img">
-              <div class="text-center mt-5">
-                <button class="btn theme_btn button_hover" data-toggle="modal" data-target="#hotelModalSingle2">Show Hotel</button>
-              </div>
-
-              <!-- Modal for Hotel 3 (shortened) -->
-              <div class="modal fade" id="hotelModalSingle2" tabindex="-1" role="dialog" aria-labelledby="hotelModalSingle2Label" aria-hidden="true">
-                <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h3 class="modal-title" id="hotelModalSingle2Label" style="font-weight:700;">Prathamesh Resort Khed Shivapur</h3>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size:28px;"><span aria-hidden="true">&times;</span></button>
-                    </div>
-                    <div class="modal-body" style="padding:1.5rem;">
-                      <div class="row mb-4 align-items-start">
-                        <div class="col-lg-6 mb-3 mb-lg-0">
-                          <iframe id="video-hotelModalSingle2" width="100%" height="315" src="https://www.youtube.com/embed/m06x67ciulY?enablejsapi=1"
-                                  title="Prathamesh Resort Khed Shivapur video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="col-lg-6 text-left-for-modal">
-                          <h4>Welcome to Prathamesh Resorts</h4>
-                          <p><strong>Craving a break from the ordinary?</strong> 
-                            Look no further than Prathamesh Resort Khed Shivapur. Nestled in the verdant landscapes near Pune, our resort offers a haven for relaxation, adventure, and unforgettable experiences. Immerse yourself in the serenity of our surroundings, partake in thrilling activities, or simply unwind at our luxurious spa.
-                            Discover the bounty of farm-to-table cuisine and create lasting memories with loved ones.</p>
-                            <a href="#booking-section"
-                            class="btn modal-to-book"
-                            data-dismiss="modal"
-                            style="background-color:#28a745; border-color:#28a745; color:#fff;">
-                            Book Now
-                            </a>
-                        </div>
-                      </div>
-
-                      <hr>
-                      <h5>Gallery</h5>
-                      <div class="row mt-3">
-                        <div class="col-6 col-md-4 col-lg-3 mb-3"><img src="./image/Prathamesh Resort Khed Shivapur1/2.jpg" class="uniform-img" alt=""></div>
-                        <div class="col-6 col-md-4 col-lg-3 mb-3"><img src="./image/Prathamesh Resort Khed Shivapur1/3.jpg" class="uniform-img" alt=""></div>
-                        <div class="col-6 col-md-4 col-lg-3 mb-3"><img src="./image/Prathamesh Resort Khed Shivapur1/4.jpg" class="uniform-img" alt=""></div>
-                        <div class="col-6 col-md-4 col-lg-3 mb-3"><img src="./image/Prathamesh Resort Khed Shivapur1/5.jpg" class="uniform-img" alt=""></div>
-                      </div>
-
-                      <hr>
-                      <h5>Location</h5>
-                      <iframe class="mt-3" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d485963.37468117534!2d73.77294800000001!3d17.904668!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc26926a368c05b%3A0xbd1de2d2046db50f!2sPrathamesh%20Valley%20Resort%20by%20Nexottel!5e0!3m2!1sen!2sus!4v1757052918058!5m2!1sen!2sus"
-                              width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                    <div class="modal-footer"><small class="text-muted">RIOTEL</small></div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            <a><h4 class="sec_h4">Prathamesh Resort <br> Khed Shivapur</h4></a>
-            <h5>₹.1,500<small>/night</small></h5>
-          </div>
-        </div>
-
-        <!-- Hotel 4 (Economy Double) -->
-        <div class="col-lg-3 col-sm-6">
-          <div class="accomodation_item text-center">
-            <div class="hotel_img">
-              <img src="./image/Pratemesh Go Crazy Adventure/1.webp" alt="Resort Image" class="uniform-img">
-              <div class="text-center mt-5">
-                <button class="btn theme_btn button_hover" data-toggle="modal" data-target="#hotelModalEconomy">Show Hotel</button>
-              </div>
-
-              <!-- Modal for Economy Double -->
-              <div class="modal fade" id="hotelModalEconomy" tabindex="-1" role="dialog" aria-labelledby="hotelModalSingle2Label" aria-hidden="true">
-                <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h3 class="modal-title" id="hotelModalSingle2Label" style="font-weight:700;">Prathamesh Go Crazy Adventure</h3>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size:28px;"><span aria-hidden="true">&times;</span></button>
-                    </div>
-                    <div class="modal-body" style="padding:1.5rem;">
-                      <div class="row mb-4 align-items-start">
-                        <div class="col-lg-6 mb-3 mb-lg-0">
-                          <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/92hbSg9_H4k?si=iZh8EgKrcheffz6t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                         -->
-                          
-                          <iframe id="video-hotelModalSingle2" width="100%" height="315" src="https://www.youtube.com/embed/92hbSg9_H4k?si=iZh8EgKrcheffz6t"
-                                  title="Prathamesh Resort Khed Shivapur video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="col-lg-6 text-left-for-modal">
-                          <h4>Welcome to Prathamesh GO CRAZY ADVENTURE PARK & RESORT</h4>
-                          <p>Prathamesh GO CRAZY ADVENTURE PARK & RESORT is one of the most popular adventure park and resort near Pune. It is situated at the scenic location surrounded by Sinhagad , Khadakwasla and Panshet Dam. This adventure park and resort helps visitors to relax from their daily routines and relieves them from regular lifestyle stresses.
-                            Within an hour drive from anywhere in Pune, adventure seekers can unwind themselves at this nature bound location. Around 70+ indoor and outdoor activities are available at the adventure park and resort to provide a combination of thrill and fun.
-                            Plan a one-day family picnic or an outbound office outing or even a school trip with us and we will be more than happy to delight you.</p>
-                            <a href="#booking-section"
-                            class="btn modal-to-book"
-                            data-dismiss="modal"
-                            style="background-color:#28a745; border-color:#28a745; color:#fff;">
-                            Book Now
-                            </a>
-                        </div>
-                      </div>
-
-                      <hr>
-                      <h5>Gallery</h5>
-                      <div class="row mt-3">
-                        <div class="col-6 col-md-4 col-lg-3 mb-3"><img src="./image/Pratemesh Go Crazy Adventure/2.webp" class="uniform-img" alt=""></div>
-                        <div class="col-6 col-md-4 col-lg-3 mb-3"><img src="./image/Pratemesh Go Crazy Adventure/3.webp" class="uniform-img" alt=""></div>
-                        <div class="col-6 col-md-4 col-lg-3 mb-3"><img src="./image/Pratemesh Go Crazy Adventure/4.webp" class="uniform-img" alt=""></div>
-                        <div class="col-6 col-md-4 col-lg-3 mb-3"><img src="./image/Pratemesh Go Crazy Adventure/5.webp" class="uniform-img" alt=""></div>
-                      </div>
-
-                      <hr>
-                      <h5>Location</h5>
-                      <iframe class="mt-3" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d24495.8963241833!2d73.7799112044767!3d18.39617629780562!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2940c3821e4c3%3A0xcf97b3947cfbf595!2sPrathamesh%20Go%20Crazy%20Resorts!5e0!3m2!1sen!2sin!4v1757304184398!5m2!1sen!2sin"
-                              width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    
-                      <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d24495.8963241833!2d73.7799112044767!3d18.39617629780562!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2940c3821e4c3%3A0xcf97b3947cfbf595!2sPrathamesh%20Go%20Crazy%20Resorts!5e0!3m2!1sen!2sin!4v1757304184398!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
-                    </div>
-                    <div class="modal-footer"><small class="text-muted">RIOTEL</small></div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            <a><h4 class="sec_h4">Prathamesh Go <br> Crazy  Resorts</h4></a>
-            <h5>₹.1,400<small>/night</small></h5>
-          </div>
-        </div>
-
+        
       </div>
     </div>
   </section>
@@ -568,7 +288,7 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="facilities_item">
-                            <h4 class="sec_h4"><i class="lnr lnr-laptop-phone"></i> Gaming Room</h4>
+                            <h4 class="sec_h4"><i class="lnr lnr-laptop-phone"></i> Chil & Play</h4>
                             <p>Have fun indoors with our fully equipped gaming room, designed for guests of all ages.</p>
                         </div>
                     </div>
@@ -594,7 +314,7 @@
             <span class="icon-wrap"><i class="fa fa-whatsapp" aria-hidden="true"></i></span>
             <div class="contact-text">
               <a href="https://wa.me/917030806399?text=Hello%20Riotel" target="_blank" rel="noopener">WhatsApp</a>
-              <div class="small">+91 7030806399</div>
+              <div class="small">+91 7030806399 / +91 7030806315</div>
             </div>
           </li>
 
@@ -624,38 +344,16 @@
           <i class="fa fa-map-marker loc-icon" aria-hidden="true"></i>
           <div class="location-text">
             <strong>Shrushti Sea Villa</strong>
-            <div class="small">Opp. Mali Samaj Hall, Shri Vardhan Taluka, Raigarh District, Diveagar, Maharashtra 402404</div>
+            <div class="small">Satyavan Savitri Pakhadi Road, Shivaji Maharaj Chowk, Diveaghar 402404</div>
           </div>
         </div>
 
-        <div class="location">
-          <i class="fa fa-map-marker loc-icon" aria-hidden="true"></i>
-          <div class="location-text">
-            <strong>Prathamesh Resorts</strong>
-            <div class="small">Near Khed Shivapur, Salavade Gaon, Taluka: Bhor, District - Pune</div>
-          </div>
-        </div>
+       
       </div>
 
       <!-- Other locations + socials -->
       <div class="footer-col other-col">
-        <h4 class="footer-title">Other Locations</h4>
-
-        <div class="location">
-          <i class="fa fa-map-marker loc-icon" aria-hidden="true"></i>
-          <div class="location-text">
-            <strong>Prathamesh Valley Resorts</strong>
-            <div class="small">SR. No. 28/1 &amp; 48/2 Bhilar Kaswand Road Bhilar, Mahabaleshwar 412 805.</div>
-          </div>
-        </div>
-
-        <div class="location">
-          <i class="fa fa-map-marker loc-icon" aria-hidden="true"></i>
-          <div class="location-text">
-            <strong>Go Crazy Adventure Park</strong>
-            <div class="small">At Post Donje, Polekar Wadi, Ghera Sinhagad Fort, Pune-411025</div>
-          </div>
-        </div>
+        
 
         <div class="socials">
           <a class="social-link" href="https://www.instagram.com/riotel_hotel/" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
@@ -798,20 +496,7 @@
       toggleVideoAutoplay('#hotelModalSingle1', '#video-hotelModalSingle1');
       toggleVideoAutoplay('#hotelModalSingle2', '#video-hotelModalSingle2');
 
-      /* ----------  Smooth scroll behavior for modal Book Now links ---------- */
-//      $('.modal-to-book').on('click', function (e) {
-//   var target = $(this).attr('href');
-//   var $modal = $(this).closest('.modal');
 
-//   if ($modal.length) {
-//     $modal.one('hidden.bs.modal', function () {
-//       var $el = $(target);
-//       if ($el.length) {
-//         $('html, body').animate({ scrollTop: $el.offset().top - 20 }, 600);
-//       }
-//     });
-//   }
-// });
 
 $(document).ready(function () {
   $(".modal-to-book").on("click", function (e) {
@@ -834,8 +519,7 @@ $(document).ready(function () {
 
       /* ----------  ensure uniform images on initial load (optional fallback) ---------- */
       $('.uniform-img').each(function () {
-        // ensure object-fit supported fallback: if not supported, set fixed height and background
-        // but modern browsers support object-fit; this is a safe no-op otherwise
+        
       });
     });
   })(jQuery);

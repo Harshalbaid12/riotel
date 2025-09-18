@@ -3669,58 +3669,40 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 8px !important;
   box-shadow: none !important;
 }
-
-.whatsapp-float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25D366; /* WhatsApp green */
-  color: #fff;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 32px;
-  z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: transform 0.2s ease-in-out;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  background-color: #1ebe5b;
-}
-.whatsapp-float i {
-  color: #fff; /* icon stays white */
-}
-.whatsapp-float, .call-float {
-  position: fixed;
-  width: 50px;
-  height: 50px;
-  right: 20px;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 24px;
-  color: #fff;
-  z-index: 100;
-  line-height: 50px;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
+.call-float, .whatsapp-float, .instagram-float {
+   position: fixed;
+   width: 50px;
+   height: 50px;
+   bottom: 20px;
+   right: 20px;
+   border-radius: 50%;
+   text-align: center;
+   font-size: 24px;
+   color: #fff;
+   line-height: 50px;
+   z-index: 100;
 }
 
 .call-float {
-  bottom: 80px; /* call above WhatsApp */
-  background-color: #1877f2; /* blue for call */
+   background-color: #1877f2; /* Green for Call */
+   bottom: 140px; /* Adjust spacing */
 }
 
 .whatsapp-float {
-  bottom: 20px; /* WhatsApp at bottom */
-  background-color: #25d366; /* WhatsApp green */
+   background-color: #25d366; /* WhatsApp color */
+   bottom: 80px;
 }
+
+.instagram-float {
+   background: radial-gradient(circle at 30% 107%, 
+       #fdf497 0%, 
+       #fdf497 5%, 
+       #fd5949 45%, 
+       #d6249f 60%, 
+       #285AEB 90%);
+   bottom: 20px;
+}
+
 
 /*---------------------------------------------------- */
 
