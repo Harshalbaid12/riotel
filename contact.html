@@ -1,441 +1,416 @@
-  <!doctype html>
-  <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="icon" href="./image/shrushti_resized_72x80.png" type="image/png">
-      <title>RIOTEL</title>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="./image/shrushti_resized_72x80.png" type="image/png">
+  <title>RIOTEL</title>
 
-    <!-- local CSS (keep these as in your project) -->
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="vendors/linericon/style.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
-    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+  <!-- local CSS (keep these as in your project) -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="vendors/linericon/style.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.css">
+  <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+  <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
 
-    <!-- SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <style>
-      /* ===== Form card styling ===== */
-      .resort-card {
-        background: #ffffff;
-        border-left: 6px solid #f0a500;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(14,20,30,0.06);
-        padding: 22px;
-        margin: 12px 0 40px;
-        transition: transform .12s ease, box-shadow .12s ease;
-      }
-      .resort-card:hover { transform: translateY(-3px); box-shadow: 0 18px 45px rgba(14,20,30,0.08); }
-      .resort-card-header h2 { margin: 0 0 6px; font-size: 22px; font-weight: 700; color: #111827; }
-      .resort-card-header .sub { margin: 0 0 18px; color: #6b7280; font-size: 14px; }
+  <style>
+    /* ===== Form card styling ===== */
+    .resort-card {
+      background: #ffffff;
+      border-left: 6px solid #f0a500;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(14,20,30,0.06);
+      padding: 22px;
+      margin: 12px 0 40px;
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .resort-card:hover { transform: translateY(-3px); box-shadow: 0 18px 45px rgba(14,20,30,0.08); }
+    .resort-card-header h2 { margin: 0 0 6px; font-size: 22px; font-weight: 700; color: #111827; }
+    .resort-card-header .sub { margin: 0 0 18px; color: #6b7280; font-size: 14px; }
 
-      .input-group { position: relative; display: block; margin-bottom: 14px; }
-      .input-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 16px; pointer-events: none; }
-      .form-control.styled,
-      .form-control.styled:focus,
-      .form-control.styled:active {
-        width: 100%;
-        padding: 12px 14px 12px 40px;
-        border-radius: 8px;
-        border: 1px solid #e6e9ef;
-        background: #fff;
-        transition: border-color .14s ease, box-shadow .14s ease, transform .08s ease;
-        min-height: 44px;
-        box-shadow: none;
-        color: #111827;
-      }
-      .textarea-wrap .form-control.styled { padding-top: 12px; padding-bottom: 12px; resize: vertical; }
-      .form-control.styled:focus { outline: none; border-color: #f0a500; box-shadow: 0 6px 22px rgba(240,165,0,0.12); }
-      .select-wrap { position: relative; }
+    .input-group { position: relative; display: block; margin-bottom: 14px; }
+    .input-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 16px; pointer-events: none; }
+    .form-control.styled,
+    .form-control.styled:focus,
+    .form-control.styled:active {
+      width: 100%;
+      padding: 12px 14px 12px 40px;
+      border-radius: 8px;
+      border: 1px solid #e6e9ef;
+      background: #fff;
+      transition: border-color .14s ease, box-shadow .14s ease, transform .08s ease;
+      min-height: 44px;
+      box-shadow: none;
+      color: #111827;
+    }
+    .textarea-wrap .form-control.styled { padding-top: 12px; padding-bottom: 12px; resize: vertical; }
+    .form-control.styled:focus { outline: none; border-color: #f0a500; box-shadow: 0 6px 22px rgba(240,165,0,0.12); }
+    .select-wrap { position: relative; }
   .select-native::-ms-expand { display: none; } 
-      /* ===== FIXED SELECT styling ===== */
-      .select-native {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background: transparent;      /* so underlying card background shows through */
-    border: 1px solid #e6e9ef;
-    padding-left: 40px;           /* room for left icon */
-    padding-right: 40px;          /* room for custom caret */
-    height: 44px;
-    border-radius: 8px;
-    width: 100%;
-    box-sizing: border-box;       /* important so padding doesn't break width */
-    font-size: 14px;
-    color: #111827;
-    cursor: pointer;
-  }
-  .select-caret {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 16px;
-    pointer-events: none;
-    z-index: 2; /* ensure visible above select */
-    color: #9ca3af;
-  }
-      .select-native:focus { outline: none; border-color: #f0a500; box-shadow: 0 6px 22px rgba(240,165,0,0.12); }
+    /* ===== FIXED SELECT styling ===== */
+    .select-native {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: transparent;
+      border: 1px solid #e6e9ef;
+      padding-left: 40px;
+      padding-right: 40px;
+      height: 44px;
+      border-radius: 8px;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 14px;
+      color: #111827;
+      cursor: pointer;
+    }
+    .select-caret {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      pointer-events: none;
+      z-index: 2;
+      color: #9ca3af;
+    }
+    .select-native:focus { outline: none; border-color: #f0a500; box-shadow: 0 6px 22px rgba(240,165,0,0.12); }
 
-      /* caret icon position */
-      .select-caret {
-        position: absolute;
-        right: 12px;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #9ca3af;
-        pointer-events: none; /* allow clicks to go through to select */
-        font-size: 16px;
-      }
+    .select-wrap .input-icon {
+      left: 12px;
+      z-index: 2;
+      pointer-events: none;
+    }
 
-      /* keep left icon aligned */
-  .select-wrap .input-icon {
-    left: 12px;
-    z-index: 2;
-    pointer-events: none;
-  }
-      /* small mobile tweak */
-      /* @media (max-width: 576px) {
-        .select-wrap .select-native { padding-left: 36px; padding-right: 36px; height: 42px; }
-        .select-wrap .select-caret { right: 10px; font-size: 15px; }
-      } */
+    @media (max-width: 576px) {
+      .select-native { padding-left: 36px; padding-right: 36px; height: 42px; }
+      .select-caret { right: 10px; font-size: 15px; }
+    }
 
-  @media (max-width: 576px) {
-    .select-native { padding-left: 36px; padding-right: 36px; height: 42px; }
-    .select-caret { right: 10px; font-size: 15px; }
-  }
+    /* submit button */
+    .submit-btn {
+      display: inline-block; width: 100%; padding: 12px 18px; border-radius: 10px; border: none;
+      font-weight: 700; letter-spacing: .4px; color: #fff;
+      background: linear-gradient(90deg,#f2b138 0%,#f08b00 100%);
+      box-shadow: 0 8px 24px rgba(240,139,0,0.18); transition: transform .12s ease, box-shadow .12s ease; cursor: pointer;
+    }
+    .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(240,139,0,0.22); }
+    .submit-btn:active { transform: translateY(-1px); }
 
+    /* ===== Footer contact icons styling ===== */
+    .contact-icons {
+      list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;
+    }
+    .contact-icons li {
+      display: flex; align-items: center; gap: 12px; color: #fff;
+    }
+    .contact-icons li i { font-size: 20px; width: 34px; height: 34px; display: inline-flex; align-items:center; justify-content:center; border-radius:50%; color:#fff; }
+    .contact-icons li .wa { background:#25D366; }
+    .contact-icons li .phone { background:#007bff; }
+    .contact-icons li .email { background:#dd4b39; }
+    .contact-icons li a, .contact-icons li span { color: #fff; text-decoration: none; font-weight: 600; }
+    .contact-icons .small { font-weight: 400; color: rgba(255,255,255,0.92); margin-left: 8px; font-size: 14px; }
 
+    /* ===== Location pin icon style ===== */
+    .loc-icon { color: #ffd166; font-size: 18px; vertical-align: middle; margin-right: 8px; text-shadow: 0 1px 0 rgba(0,0,0,0.15); }
 
-      /* submit button */
-      .submit-btn {
-        display: inline-block; width: 100%; padding: 12px 18px; border-radius: 10px; border: none;
-        font-weight: 700; letter-spacing: .4px; color: #fff;
-        background: linear-gradient(90deg,#f2b138 0%,#f08b00 100%);
-        box-shadow: 0 8px 24px rgba(240,139,0,0.18); transition: transform .12s ease, box-shadow .12s ease; cursor: pointer;
-      }
-      .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(240,139,0,0.22); }
-      .submit-btn:active { transform: translateY(-1px); }
+    /* footer background and spacing */
+    .footer-area { background: #0b0b0b; color: #fff; padding-top: 40px; padding-bottom: 26px; }
+    .single-footer-widget .footer_title { color: #fff; margin-bottom: 12px; font-weight:700; }
+    .single-footer-widget p, .single-footer-widget ul { color: rgba(255,255,255,0.92); }
 
-      /* ===== Footer contact icons styling ===== */
-      .contact-icons {
-        list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;
-      }
-      .contact-icons li {
-        display: flex; align-items: center; gap: 12px; color: #fff;
-      }
-      .contact-icons li i { font-size: 20px; width: 34px; height: 34px; display: inline-flex; align-items:center; justify-content:center; border-radius:50%; color:#fff; }
-      .contact-icons li .wa { background:#25D366; }
-      .contact-icons li .phone { background:#007bff; }
-      .contact-icons li .email { background:#dd4b39; }
-      .contact-icons li a, .contact-icons li span { color: #fff; text-decoration: none; font-weight: 600; }
-      .contact-icons .small { font-weight: 400; color: rgba(255,255,255,0.92); margin-left: 8px; font-size: 14px; }
+    @media (max-width: 768px) {
+      .contact-icons { flex-direction: column; }
+    }
+  </style>
+</head>
 
-      /* ===== Location pin icon style ===== */
-      .loc-icon { color: #ffd166; font-size: 18px; vertical-align: middle; margin-right: 8px; text-shadow: 0 1px 0 rgba(0,0,0,0.15); }
-
-      /* footer background and spacing */
-      .footer-area { background: #0b0b0b; color: #fff; padding-top: 40px; padding-bottom: 26px; }
-      .single-footer-widget .footer_title { color: #fff; margin-bottom: 12px; font-weight:700; }
-      .single-footer-widget p, .single-footer-widget ul { color: rgba(255,255,255,0.92); }
-
-      @media (max-width: 768px) {
-        .contact-icons { flex-direction: column; }
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- Header -->
-     <header class="header_area">
-        <div class="container">
-          <nav class="navbar navbar-expand-lg navbar-light">
-            <!-- Logo -->
-            <a class="navbar-brand logo_h d-flex align-items-center" href="index.html">
-              <img src="./image/shrushti_resized_72x80.png" alt="Riotel Logo" height="50">
-              <div class="ml-2">
-                <h1 class="mb-0" style="font-size: 1.5rem;">Shrushti Sea Resort</h1>
-                <small class="text-muted">by RIOTEL</small>
-              </div>
-            </a>
-
-            <!-- Mobile toggle -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-            </button>
-
-            <!-- Menu -->
-            <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-              <ul class="nav navbar-nav menu_nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
-                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                <li class="nav-item active"><a class="nav-link" href="contact.html">Join Riotel</a></li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </header>
-
-    <!-- floating phone & WhatsApp -->
-   <!--================whatsapp =================-->
-        <!-- Call Floating Button -->
-        <!-- Call Floating Button -->
-        <a href="tel:+917030806399" class="call-float">
-          <i class="fa fa-phone"></i>
+<body>
+  <!-- Header -->
+  <header class="header_area">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <!-- Logo -->
+        <a class="navbar-brand logo_h d-flex align-items-center" href="index.html">
+          <img src="./image/shrushti_resized_72x80.png" alt="Riotel Logo" height="50">
+          <div class="ml-2">
+            <h1 class="mb-0" style="font-size: 1.5rem;">Shrushti Sea Resort</h1>
+            <small class="text-muted">by RIOTEL</small>
+          </div>
         </a>
 
-        <!-- WhatsApp Floating Button -->
-        <a href="https://wa.me/917030806399?text=Hello%20Riotel%2C%20I%27m%20interested%20in%20booking%20Shrushti%20Sea%20Villa"
-          target="_blank"
-          class="whatsapp-float">
-          <i class="fa fa-whatsapp"></i>
-        </a>
+        <!-- Mobile toggle -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
 
-        <!-- Instagram Floating Button -->
-        <a href="https://www.instagram.com/shrushtiresort2020?igsh=MXBjZGdrd2J2czRtdg%3D%3D&utm_source=qr" 
-          target="_blank" 
-          class="instagram-float">
-          <i class="fa fa-instagram"></i>
-        </a>
-
-    <!-- Breadcrumb / Hero -->
-    <section class="breadcrumb_area">
-      <div class="overlay bg-parallax"></div>
-      <div class="container">
-        <div class="page-cover">
-          <h2 class="page-cover-tittle text-center">Join Riotel</h2>
-          <div class="banner_content">
-            <h6><strong> Own a resort or villa?</strong><br>
-              Join hands with Riotel Resort Management and let us handle everything—from guest bookings and operations to marketing and catering. With our expertise, you can maximize your property’s potential while we ensure unforgettable experiences for your guests.</h6>
-          </div>
+        <!-- Menu -->
+        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+          <ul class="nav navbar-nav menu_nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+            <li class="nav-item active"><a class="nav-link" href="contact.html">Join Riotel</a></li>
+          </ul>
         </div>
-      </div>
-    </section>
-
-    <!-- Contact form area (card-style) -->
-    <section class="contact_area section_gap">
-      <div class="container">
-        <div class="resort-card">
-          <div class="resort-card-header">
-            <h2>Register Your Resort / Hotel</h2>
-            <p class="sub">Fill the details below and we'll get back to you shortly.</p>
-          </div>
-
-          <form action="https://api.web3forms.com/submit" method="POST" id="resortForm" class="resort-form">
-            <input type="hidden" name="access_key" value="05c12067-6d16-4a18-9daf-40c8bc2bf328">
-            <input type="hidden" name="subject" value="New Resort Registration">
-            <input type="hidden" name="from_name" value="Website Resort Form">
-            <input type="checkbox" name="botcheck" class="hidden" style="display:none!important">
-
-            <div class="row">
-              <div class="col-md-6">
-                <label class="input-group">
-                  <i class="fa fa-building input-icon" aria-hidden="true"></i>
-                  <input type="text" class="form-control styled" name="resort_name" placeholder="Resort/Villa Name" required>
-                </label>
-              </div>
-
-              <div class="col-md-6">
-                <label class="input-group">
-                  <i class="fa fa-map-marker input-icon" aria-hidden="true"></i>
-                  <input type="text" class="form-control styled" name="location" placeholder="Location" required>
-                </label>
-              </div>
-
-              <div class="col-md-6">
-                <label class="input-group">
-                  <i class="fa fa-user input-icon" aria-hidden="true"></i>
-                  <input type="text" class="form-control styled" name="contact_person" placeholder="Contact Person" required>
-                </label>
-              </div>
-
-              <div class="col-md-6">
-                <label class="input-group">
-                  <i class="fa fa-phone input-icon" aria-hidden="true"></i>
-                  <input type="tel" class="form-control styled" name="phone"
-                        placeholder="Phone Number" pattern="(\+?\d{1,4}[- ]?)?\d{10}"
-                        title="Enter a valid phone number" required>
-                </label>
-              </div>
-
-              <div class="col-md-6">
-                <label class="input-group">
-                  <i class="fa fa-envelope input-icon" aria-hidden="true"></i>
-                  <input type="email" class="form-control styled" name="email" placeholder="Email Address" required>
-                </label>
-              </div>
-
-              <!-- FIXED SELECT field -->
-              <div class="col-md-6">
-                <label class="input-group select-wrap">
-                  <i class="fa fa-home input-icon" aria-hidden="true"></i>
-
-                  <!-- native select with class select-native -->
-                  <select class="form-control styled select-native" name="property_type" required>
-                    <option value="" selected disabled>Type of Property</option>
-                    <option value="Villa">Villa</option>
-                    <option value="Resort">Resort</option>
-                    <option value="Beachfront">Beachfront</option>
-                    <option value="Homestay">Homestay</option>
-                  </select>
-
-                  <i class="fa fa-caret-down select-caret" aria-hidden="true"></i>
-                </label>
-              </div>
-
-              <div class="col-md-6">
-                <label class="input-group">
-                  <i class="fa fa-bed input-icon" aria-hidden="true"></i>
-                  <input type="number" class="form-control styled" name="rooms" placeholder="Number of Rooms" min="1" required>
-                </label>
-              </div>
-
-              <div class="col-md-12">
-                <label class="input-group textarea-wrap">
-                  <i class="fa fa-list input-icon" aria-hidden="true"></i>
-                  <textarea class="form-control styled" name="facilities" rows="4" placeholder="Facilities Provided" required></textarea>
-                </label>
-              </div>
-
-              <div class="col-md-12">
-                <button type="submit" id="submitBtn" class="submit-btn">Submit</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-      <footer class="footer-area section_gap">
-  <div class="container">
-    <div class="footer-grid">
-
-      <!-- Contact column -->
-      <div class="footer-col contact-col">
-        <h4 class="footer-title">Get In Touch</h4>
-        <ul class="contact-icons" aria-label="Contact information">
-          <li>
-            <span class="icon-wrap"><i class="fa fa-whatsapp" aria-hidden="true"></i></span>
-            <div class="contact-text">
-              <a href="https://wa.me/917030806399?text=Hello%20Riotel" target="_blank" rel="noopener">WhatsApp</a>
-              <div class="small">+91 7030806399 / +91 7030806315</div>
-            </div>
-          </li>
-
-          <li>
-            <span class="icon-wrap"><i class="fa fa-phone" aria-hidden="true"></i></span>
-            <div class="contact-text">
-              <a href="tel:+917030806399">Call</a>
-              <div class="small">+91 7030806399 / +91 7030806315</div>
-            </div>
-          </li>
-
-          <li>
-            <span class="icon-wrap"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-            <div class="contact-text">
-              <a href="mailto:riotelhotel@gmail.com">Email</a>
-              <div class="small">riotelhotel@gmail.com</div>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Locations column -->
-      <div class="footer-col location-col">
-        <h4 class="footer-title">Locations</h4>
-
-        <div class="location">
-          <i class="fa fa-map-marker loc-icon" aria-hidden="true"></i>
-          <div class="location-text">
-            <strong>Shrushti Sea Villa</strong>
-            <div class="small">Satyavan Savitri Pakhadi Road, Shivaji Maharaj Chowk, Diveaghar 402404</div>
-          </div>
-        </div>
-
-       
-      </div>
-
-      <!-- Other locations + socials -->
-      <div class="footer-col other-col">
-        
-
-        <div class="socials">
-          <a class="social-link" href="https://www.instagram.com/riotel_hotel/" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
-          <a class="social-link" href="https://wa.me/917030806399" target="_blank" aria-label="WhatsApp"><i class="fa fa-whatsapp"></i></a>
-        </div>
-      </div>
-
+      </nav>
     </div>
+  </header>
 
-    <div class="footer-bottom">
-      <p class="footer-copy">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | RIOTEL</p>
-      <p class="footer-credit">Designed &amp; Managed by Riotel</p>
+  <!-- floating phone & WhatsApp -->
+  <!-- Call Floating Button -->
+  <a href="tel:+917030806399" class="call-float" aria-label="Call Riotel">
+    <i class="fa fa-phone"></i>
+  </a>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/917030806399?text=Hello%20Riotel%2C%20I%27m%20interested%20in%20booking%20Shrushti%20Sea%20Villa"
+    target="_blank"
+    class="whatsapp-float" aria-label="WhatsApp Riotel" rel="noopener">
+    <i class="fa fa-whatsapp"></i>
+  </a>
+
+  <!-- Instagram Floating Button -->
+  <a href="https://www.instagram.com/riotel_hotel/" 
+    target="_blank" 
+    class="instagram-float" aria-label="Riotel Instagram" rel="noopener">
+    <i class="fa fa-instagram"></i>
+  </a>
+
+  <!-- Breadcrumb / Hero -->
+  <section class="breadcrumb_area">
+    <div class="overlay bg-parallax"></div>
+    <div class="container">
+      <div class="page-cover">
+        <h2 class="page-cover-tittle text-center">Join Riotel</h2>
+        <div class="banner_content">
+          <h6><strong> Own a resort or villa?</strong><br>
+            Join hands with Riotel Resort Management and let us handle everything—from guest bookings and operations to marketing and catering. With our expertise, you can maximize your property’s potential while we ensure unforgettable experiences for your guests.</h6>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
-    <!-- Optional JS (keep your local files) -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.js"></script>
-    <script src="js/mail-script.js"></script>
-    <script src="js/stellar.js"></script>
-    <script src="vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="vendors/isotope/isotope-min.js"></script>
-    <script src="vendors/lightbox/simpleLightbox.min.js"></script>
-    <script src="js/gmaps.min.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/contact.js"></script>
-    <script src="js/custom.js"></script>
+  </section>
 
-    <!-- AJAX submit to Web3Forms + SweetAlert2 -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const form = document.getElementById('resortForm');
-        const submitBtn = document.getElementById('submitBtn');
+  <!-- Contact form area (card-style) -->
+  <section class="contact_area section_gap">
+    <div class="container">
+      <div class="resort-card">
+        <div class="resort-card-header">
+          <h2>Register Your Resort / Hotel</h2>
+          <p class="sub">Fill the details below and we'll get back to you shortly.</p>
+        </div>
 
-        form.addEventListener('submit', async function (e) {
-          e.preventDefault();
-          submitBtn.disabled = true;
+        <form action="https://api.web3forms.com/submit" method="POST" id="resortForm" class="resort-form">
+          <input type="hidden" name="access_key" value="05c12067-6d16-4a18-9daf-40c8bc2bf328">
+          <input type="hidden" name="subject" value="New Resort Registration">
+          <input type="hidden" name="from_name" value="Website Resort Form">
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none!important">
 
-          try {
-            const fd = new FormData(form);
+          <div class="row">
+            <div class="col-md-6">
+              <label class="input-group">
+                <i class="fa fa-building input-icon" aria-hidden="true"></i>
+                <input type="text" class="form-control styled" name="resort_name" placeholder="Resort/Villa Name" required>
+              </label>
+            </div>
 
-            Swal.fire({ title: 'Sending form…', allowOutsideClick: false, didOpen: () => Swal.showLoading() });
+            <div class="col-md-6">
+              <label class="input-group">
+                <i class="fa fa-map-marker input-icon" aria-hidden="true"></i>
+                <input type="text" class="form-control styled" name="location" placeholder="Location" required>
+              </label>
+            </div>
 
-            const res = await fetch(form.action, {
-              method: form.method,
-              body: fd
-            });
+            <div class="col-md-6">
+              <label class="input-group">
+                <i class="fa fa-user input-icon" aria-hidden="true"></i>
+                <input type="text" class="form-control styled" name="contact_person" placeholder="Contact Person" required>
+              </label>
+            </div>
 
-            const json = await res.json();
+            <div class="col-md-6">
+              <label class="input-group">
+                <i class="fa fa-phone input-icon" aria-hidden="true"></i>
+                <input type="tel" class="form-control styled" name="phone"
+                      placeholder="Phone Number" pattern="(\+?\d{1,4}[- ]?)?\d{10}"
+                      title="Enter a valid phone number" required>
+              </label>
+            </div>
 
-            if (res.ok && json.success) {
-              Swal.fire({ icon: 'success', title: 'Submitted!', text: 'Thank you — we received your registration.', timer: 2200, showConfirmButton: false });
-              form.reset();
-            } else {
-              const msg = (json && json.message) ? json.message : 'Submission failed. Please try again.';
-              Swal.fire({ icon: 'error', title: 'Submission failed', text: msg });
-            }
-          } catch (err) {
-            console.error(err);
-            Swal.fire({ icon: 'error', title: 'Network error', text: 'Could not submit the form. Check your network and try again.' });
-          } finally {
-            submitBtn.disabled = false;
+            <div class="col-md-6">
+              <label class="input-group">
+                <i class="fa fa-envelope input-icon" aria-hidden="true"></i>
+                <input type="email" class="form-control styled" name="email" placeholder="Email Address" required>
+              </label>
+            </div>
+
+            <!-- FIXED SELECT field -->
+            <div class="col-md-6">
+              <label class="input-group select-wrap">
+                <i class="fa fa-home input-icon" aria-hidden="true"></i>
+
+                <!-- native select with class select-native -->
+                <select class="form-control styled select-native" name="property_type" required>
+                  <option value="" selected disabled>Type of Property</option>
+                  <option value="Villa">Villa</option>
+                  <option value="Resort">Resort</option>
+                  <option value="Beachfront">Beachfront</option>
+                  <option value="Homestay">Homestay</option>
+                </select>
+
+                <i class="fa fa-caret-down select-caret" aria-hidden="true"></i>
+              </label>
+            </div>
+
+            <div class="col-md-6">
+              <label class="input-group">
+                <i class="fa fa-bed input-icon" aria-hidden="true"></i>
+                <input type="number" class="form-control styled" name="rooms" placeholder="Number of Rooms" min="1" required>
+              </label>
+            </div>
+
+            <div class="col-md-12">
+              <label class="input-group textarea-wrap">
+                <i class="fa fa-list input-icon" aria-hidden="true"></i>
+                <textarea class="form-control styled" name="facilities" rows="4" placeholder="Facilities Provided" required></textarea>
+              </label>
+            </div>
+
+            <div class="col-md-12">
+              <button type="submit" id="submitBtn" class="submit-btn">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-area section_gap">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Contact column -->
+        <div class="footer-col contact-col">
+          <h4 class="footer-title">Get In Touch</h4>
+          <ul class="contact-icons" aria-label="Contact information">
+            <li>
+              <span class="icon-wrap"><i class="fa fa-whatsapp" aria-hidden="true"></i></span>
+              <div class="contact-text">
+                <a href="https://wa.me/917030806399?text=Hello%20Riotel" target="_blank" rel="noopener">WhatsApp</a>
+                <div class="small">+91 7030806399 / +91 7030806315</div>
+              </div>
+            </li>
+
+            <li>
+              <span class="icon-wrap"><i class="fa fa-phone" aria-hidden="true"></i></span>
+              <div class="contact-text">
+                <a href="tel:+917030806399">Call</a>
+                <div class="small">+91 7030806399 / +91 7030806315</div>
+              </div>
+            </li>
+
+            <li>
+              <span class="icon-wrap"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+              <div class="contact-text">
+                <a href="mailto:riotelhotel@gmail.com">Email</a>
+                <div class="small">riotelhotel@gmail.com</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Locations column -->
+        <div class="footer-col location-col">
+          <h4 class="footer-title">Locations</h4>
+
+          <div class="location">
+            <i class="fa fa-map-marker loc-icon" aria-hidden="true"></i>
+            <div class="location-text">
+              <strong>Shrushti Sea Villa</strong>
+              <div class="small">Satyavan Savitri Pakhadi Road, Shivaji Maharaj Chowk, Diveaghar 402404</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other locations + socials -->
+        <div class="footer-col other-col">
+          <div class="socials">
+            <a class="social-link" href="https://www.instagram.com/riotel_hotel/" target="_blank" aria-label="Instagram" rel="noopener"><i class="fa fa-instagram"></i></a>
+            <a class="social-link" href="https://wa.me/917030806399" target="_blank" aria-label="WhatsApp" rel="noopener"><i class="fa fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | RIOTEL</p>
+        <p class="footer-credit">Designed &amp; Managed by Riotel</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Optional JS (keep your local files) -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="js/jquery.ajaxchimp.min.js"></script>
+  <script src="vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.js"></script>
+  <script src="js/mail-script.js"></script>
+  <script src="js/stellar.js"></script>
+  <script src="vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="vendors/isotope/isotope-min.js"></script>
+  <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+  <script src="js/gmaps.min.js"></script>
+  <script src="js/jquery.form.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/custom.js"></script>
+
+  <!-- AJAX submit to Web3Forms + SweetAlert2 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('resortForm');
+      const submitBtn = document.getElementById('submitBtn');
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        submitBtn.disabled = true;
+
+        try {
+          const fd = new FormData(form);
+
+          Swal.fire({ title: 'Sending form…', allowOutsideClick: false, didOpen: () => Swal.showLoading() });
+
+          const res = await fetch(form.action, {
+            method: form.method,
+            body: fd
+          });
+
+          const json = await res.json();
+
+          if (res.ok && json.success) {
+            Swal.fire({ icon: 'success', title: 'Submitted!', text: 'Thank you — we received your registration.', timer: 2200, showConfirmButton: false });
+            form.reset();
+          } else {
+            const msg = (json && json.message) ? json.message : 'Submission failed. Please try again.';
+            Swal.fire({ icon: 'error', title: 'Submission failed', text: msg });
           }
-        });
+        } catch (err) {
+          console.error(err);
+          Swal.fire({ icon: 'error', title: 'Network error', text: 'Could not submit the form. Check your network and try again.' });
+        } finally {
+          submitBtn.disabled = false;
+        }
       });
-    </script>
-  </body>
-  </html>
+    });
+  </script>
+</body>
+</html>

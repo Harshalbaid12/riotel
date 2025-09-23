@@ -1,308 +1,421 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" href="./image/shrushti_resized_72x80.png" type="image/png">
-        <title>RIOTEL</title>
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="vendors/linericon/style.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.css">
-        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
-        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
-        <!-- main css -->
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/responsive.css">
-    </head>
-    <body>
-        <!--================Header Area =================-->
-       <header class="header_area">
-        <div class="container">
-          <nav class="navbar navbar-expand-lg navbar-light">
-            <!-- Logo -->
-            <a class="navbar-brand logo_h d-flex align-items-center" href="index.html">
-              <img src="./image/shrushti_resized_72x80.png" alt="Riotel Logo" height="50">
-              <div class="ml-2">
-                <h1 class="mb-0" style="font-size: 1.5rem;">Shrushti Sea Resort</h1>
-                <small class="text-muted">by RIOTEL</small>
-              </div>
-            </a>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-            <!-- Mobile toggle -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-            </button>
+  <title>Shrushti Sea Resort – About | Riotel Hotels</title>
+  <meta name="description" content="About Shrushti Sea Resort — beachfront resort in Diveagar. Learn about our facilities, history, and what makes us special." />
+  <link rel="canonical" href="https://riotelhotels.com/about.html" />
 
-            <!-- Menu -->
-            <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-              <ul class="nav navbar-nav menu_nav ml-auto">
-                <li class="nav-item "><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item active"><a class="nav-link" href="about.html">About us</a></li>
-                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Join Riotel</a></li>
-              </ul>
-            </div>
-          </nav>
+  <!-- Social -->
+  <meta property="og:title" content="About Shrushti Sea Resort – Riotel Hotels" />
+  <meta property="og:description" content="Established in 2012, Shrushti Sea Resort offers beachfront villas, pool, bathtub rooms and live BBQ nights." />
+  <meta property="og:image" content="https://riotelhotels.com/image/hero-large.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="./image/shrushti_resized_72x80.png" type="image/png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="vendors/linericon/style.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.css">
+  <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+  <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Structured data (match home) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Shrushti Sea Resort (Riotel Hotels)",
+    "url": "https://riotelhotels.com/",
+    "logo": "https://riotelhotels.com/image/shrushti_resized_72x80.png",
+    "image": ["https://riotelhotels.com/image/hero-large.jpg"],
+    "description": "Beachfront resort in Konkan offering sea view villas, pool, live BBQ and family packages.",
+    "telephone": "+917030806399",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "At Post Donje 180, Polekar Wadi, Sinhagad Road",
+      "addressLocality": "Diveagar",
+      "addressRegion": "Maharashtra",
+      "postalCode": "402404",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "18.1848198",
+      "longitude": "72.9841699"
+    },
+    "priceRange": "$$",
+    "openingHours": "Mo-Su 00:00-23:59"
+  }
+  </script>
+
+  <style>
+    /* local style to match home page look */
+    .navbar-brand .brand-title { font-size:1.15rem; margin:0; line-height:1; font-weight:700; }
+    .navbar-brand .brand-sub { font-size:0.75rem; color:#6c757d; display:block; margin-top:2px; }
+
+    /* slideshow */
+    #aboutSlideshow { position:relative; width:100%; height:320px; display:block; overflow:hidden; border-radius:8px; }
+    #aboutSlideshow img.slide { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition: opacity .6s ease; }
+    #aboutSlideshow img.slide.active { opacity:1; z-index:1; }
+
+    /* gallery / facility helpers */
+    .uniform-img { width:100%; height:250px; object-fit:cover; display:block; }
+    .gallery_img { position:relative; overflow:hidden; }
+    .gallery_img .hover { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; opacity:0; background: rgba(0,0,0,0.28); transition: opacity .18s ease; }
+    .gallery_img:hover .hover { opacity:1; }
+
+    /* floating contact controls (copy from home) */
+    .float-group { position: fixed; right: 12px; bottom: 12px; z-index: 9999; display:flex; flex-direction: column-reverse; gap:10px; align-items:flex-end; }
+    .float-btn { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 14px rgba(0,0,0,0.12); color:#fff; border:none; cursor:pointer; font-size:18px; text-decoration:none; }
+    .float-phone { background:#007bff; }
+    .float-whatsapp { background:#25D366; }
+    .float-instagram { background:#E1306C; }
+    .float-popout { display:none; background:#fff; border-radius:8px; box-shadow:0 8px 30px rgba(0,0,0,0.15); padding:6px; min-width:200px; margin-bottom:6px; }
+    .float-popout.show { display:block; }
+    .popout-label { font-size:12px; font-weight:600; color:#444; margin:4px 6px; }
+    .float-popout a { display:flex; gap:10px; align-items:center; padding:8px; border-radius:6px; color:#222; text-decoration:none; }
+    .float-popout a:hover { background:#f1f1f1; }
+    .pop-icon { width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#f7f7f7; color:#333; }
+
+    /* ensure breadcrumb title visible */
+    .breadcrumb_area .page-cover-tittle { font-size:2rem; color:#17202a; font-weight:700; }
+
+    /* small responsive tweaks */
+    @media (max-width:576px) {
+      #aboutSlideshow { height:200px; }
+      .float-group { right:8px; bottom:8px; gap:8px; }
+    }
+
+    a:focus { outline:3px solid rgba(40,167,69,0.25); outline-offset:2px; }
+  </style>
+</head>
+<body>
+  <!-- header (matches home) -->
+  <header class="header_area" role="banner" aria-label="Main header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light" role="navigation">
+        <a class="navbar-brand logo_h d-flex align-items-center" href="index.html">
+          <img src="./image/shrushti_resized_72x80.png" alt="Riotel Logo" height="50">
+          <div class="ml-2">
+            <p class="brand-title mb-0">Shrushti Sea Resort</p>
+            <small class="brand-sub">by RIOTEL</small>
+          </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+
+        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+          <ul class="nav navbar-nav menu_nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item active"><a class="nav-link" href="about.html">About us</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Join Riotel</a></li>
+          </ul>
         </div>
-      </header>
-        <!--================Header Area =================-->
-       <!--================whatsapp =================-->
-        <!-- Call Floating Button -->
-<!-- Call Floating Button -->
-<a href="tel:+917030806399" class="call-float">
-   <i class="fa fa-phone"></i>
-</a>
+      </nav>
+    </div>
+  </header>
 
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/917030806399?text=Hello%20Riotel%2C%20I%27m%20interested%20in%20booking%20Shrushti%20Sea%20Villa"
-   target="_blank"
-   class="whatsapp-float">
-   <i class="fa fa-whatsapp"></i>
-</a>
+  <!-- floating contacts (phone + whatsapp popouts + instagram) -->
+  <div class="float-group" aria-hidden="false">
+    <!-- Instagram -->
+    <div class="group" id="instaGroup">
+      <a class="float-btn float-instagram" href="https://www.instagram.com/riotelhotels/" target="_blank" rel="noopener" aria-label="Open Riotel Instagram">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+      </a>
+    </div>
 
-<!-- Instagram Floating Button -->
-<a href="https://www.instagram.com/shrushtiresort2020?igsh=MXBjZGdrd2J2czRtdg%3D%3D&utm_source=qr" 
-   target="_blank" 
-   class="instagram-float">
-   <i class="fa fa-instagram"></i>
-</a>
-        <!--================whatsapp =================-->
-        <!--================Breadcrumb Area =================-->
-        <section class="breadcrumb_area">
-            <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
-            <div class="container">
-                <div class="page-cover text-center">
-                    <h2 class="page-cover-tittle">About Us</h2>
-                    <ol class="breadcrumb">
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active">About</li>
-                    </ol>
-                </div>
-            </div>
-        </section>
-        <!--================Breadcrumb Area =================-->
-        
-        <!--================ About History Area  =================-->
-        <section class="about_history_area section_gap">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 d_flex align-items-center">
-                        <div class="about_content ">
-                            <h2 class="title title_color">About Shrushti Sea Resort </h2>
-                            <p>Established in 2012, Shrushti Sea Resort is one of the oldest and most loved resorts in Diveagar, offering a perfect blend of tradition, comfort, and coastal charm.
-                             <br><br> Located just 2 minutes from the beach, our resort is surrounded by lush greenery and the soothing sounds of nature, making it the ideal escape from the hustle of daily life.
-                            <br><br>At Shrushti Sea Resort, we provide a stay that is both relaxing and memorable with:
-                              <ul>
-                                <li>A refreshing swimming pool </li>
-                                <li>Premium bathtub rooms with nature views </li>
-                                <li>Parking facilities </li>
-                                <li>Delicious fresh seafood straight from the coast </li>
-                                <li>Evenings filled with live barbecue and bonfire </li>
-                              </ul>
-                            
-                            
-                            
-                            </p>
-                          </div>
-                    </div>
-                    <div class="col-md-6">
-                    <div id="aboutSlideshow" class="about-slideshow" aria-label="About images slideshow" role="img">
-                        <img class="slide active" src="./image/Shrushti see villa/IMG-20250908-WA0021.jpg" alt="About image 1" loading="lazy">
-                        <img class="slide" src="./image/Shrushti see villa/IMG-20250908-WA0022.jpg" alt="About image 2" loading="lazy">
-                        <img class="slide" src="./image/Shrushti see villa/IMG-20250908-WA0008.jpg" alt="About image 2" loading="lazy">
-                        
-                    </div>
-                    </div>
-
-
-
-                </div>
-            </div>
-        </section>
-        <!--================ About History Area  =================-->
-        
-         <!--================ Facilities Area  =================-->
-        <section class="facilities_area section_gap">
-            <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background="">  
-            </div>
-            <div class="container">
-                <div class="section_title text-center">
-                    <h2 class="title_w">Facilities</h2>
-                    <p>Who are in extremely love with eco friendly system.</p>
-                </div>
-                <div class="row mb_30">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="facilities_item">
-                            <h4 class="sec_h4"><i class="lnr lnr-dinner"></i> Restaurant</h4>
-                            <p>Delight in a variety of cuisines with our Veg, Non-Veg, and fresh Seafood .</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="facilities_item">
-                            <h4 class="sec_h4"><i class="lnr lnr-smile"></i> Children Play Area</h4>
-                            <p>A safe and joyful space where kids can play, explore, and make memories.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="facilities_item">
-                            <h4 class="sec_h4"><i class="lnr lnr-car"></i> Parking</h4>
-                            <p>Spacious and secure parking available for all our guests.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="facilities_item">
-                            <h4 class="sec_h4"><i class="lnr lnr-drop"></i> Swimming Pool</h4>
-                            <p>Unwind and refresh in our crystal-clear swimming pool, perfect for a relaxing dip or a fun splash with family & friends.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="facilities_item">
-                            <h4 class="sec_h4"><i class="lnr lnr-sun"></i> Beachfront Resort</h4>
-                            <p>Wake up to the sound of waves and enjoy direct access to the beach just steps away from your stay.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="facilities_item">
-                            <h4 class="sec_h4"><i class="lnr lnr-laptop-phone"></i> Gaming Room</h4>
-                            <p>Have fun indoors with our fully equipped gaming room, designed for guests of all ages.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        
-
-  <!-- Footer (unchanged) -->
-   <footer class="footer-area section_gap">
-  <div class="container">
-    <div class="footer-grid">
-
-      <!-- Contact column -->
-      <div class="footer-col contact-col">
-        <h4 class="footer-title">Get In Touch</h4>
-        <ul class="contact-icons" aria-label="Contact information">
-          <li>
-            <span class="icon-wrap"><i class="fa fa-whatsapp" aria-hidden="true"></i></span>
-            <div class="contact-text">
-              <a href="https://wa.me/917030806399?text=Hello%20Riotel" target="_blank" rel="noopener">WhatsApp</a>
-              <div class="small">+91 7030806399 / +91 7030806315</div>
-            </div>
-          </li>
-
-          <li>
-            <span class="icon-wrap"><i class="fa fa-phone" aria-hidden="true"></i></span>
-            <div class="contact-text">
-              <a href="tel:+917030806399">Call</a>
-              <div class="small">+91 7030806399 / +91 7030806315</div>
-            </div>
-          </li>
-
-          <li>
-            <span class="icon-wrap"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-            <div class="contact-text">
-              <a href="mailto:riotelhotel@gmail.com">Email</a>
-              <div class="small">riotelhotel@gmail.com</div>
-            </div>
-          </li>
-        </ul>
+    <!-- Phone -->
+    <div class="group" id="phoneGroup">
+      <div class="float-popout" id="phonePopout" aria-hidden="true">
+        <div class="popout-label">Call us</div>
+        <a href="tel:+917030806399" aria-label="Call primary +91 70308 06399">
+          <span class="pop-icon"><i class="fa fa-phone"></i></span>
+          <div><div style="font-weight:600;">+91 70308 06399</div><div style="font-size:12px;color:#666;">Primary</div></div>
+        </a>
+        <a href="tel:+917030806315" aria-label="Call alternate +91 70308 06315">
+          <span class="pop-icon"><i class="fa fa-phone"></i></span>
+          <div><div style="font-weight:600;">+91 70308 06315</div><div style="font-size:12px;color:#666;">Alternate</div></div>
+        </a>
       </div>
+      <button class="float-btn float-phone" id="phoneToggle" aria-expanded="false" aria-controls="phonePopout" title="Call Riotel">
+        <i class="fa fa-phone" aria-hidden="true"></i>
+      </button>
+    </div>
 
-      <!-- Locations column -->
-      <div class="footer-col location-col">
-        <h4 class="footer-title">Locations</h4>
+    <!-- WhatsApp -->
+    <div class="group" id="waGroup">
+      <div class="float-popout" id="waPopout" aria-hidden="true">
+        <div class="popout-label">Message on WhatsApp</div>
+        <a href="https://wa.me/917030806399?text=Hello%20Riotel" target="_blank" rel="noopener" aria-label="WhatsApp primary +91 70308 06399">
+          <span class="pop-icon"><i class="fa fa-whatsapp"></i></span>
+          <div><div style="font-weight:600;">+91 70308 06399</div><div style="font-size:12px;color:#666;">Primary</div></div>
+        </a>
+        <a href="https://wa.me/917030806315?text=Hello%20Riotel" target="_blank" rel="noopener" aria-label="WhatsApp alternate +91 70308 06315">
+          <span class="pop-icon"><i class="fa fa-whatsapp"></i></span>
+          <div><div style="font-weight:600;">+91 70308 06315</div><div style="font-size:12px;color:#666;">Alternate</div></div>
+        </a>
+      </div>
+      <button class="float-btn float-whatsapp" id="waToggle" aria-expanded="false" aria-controls="waPopout" title="WhatsApp Riotel">
+        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
 
-        <div class="location">
-          <i class="fa fa-map-marker loc-icon" aria-hidden="true"></i>
-          <div class="location-text">
-            <strong>Shrushti Sea Villa</strong>
-            <div class="small">Satyavan Savitri Pakhadi Road, Shivaji Maharaj Chowk, Diveaghar 402404</div>
+  <!-- breadcrumb / hero area -->
+  <section class="breadcrumb_area">
+    <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
+    <div class="container">
+      <div class="page-cover text-center">
+        <h2 class="page-cover-tittle">About Us</h2>
+        <ol class="breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li class="active">About</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- about history -->
+  <section class="about_history_area section_gap">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 d_flex align-items-center">
+          <div class="about_content">
+            <h2 class="title title_color">About Shrushti Sea Resort</h2>
+            <p>Established in 2012, Shrushti Sea Resort is one of the oldest and most loved resorts in Diveagar, offering a perfect blend of tradition, comfort, and coastal charm.</p>
+            <p>Located just 2 minutes from the beach, our resort is surrounded by lush greenery and the soothing sounds of nature — the ideal escape from the hustle of daily life.</p>
+
+            <p>At Shrushti Sea Resort, we provide a stay that is both relaxing and memorable with:</p>
+            <ul>
+              <li>A refreshing swimming pool</li>
+              <li>Premium bathtub rooms with nature views</li>
+              <li>Parking facilities</li>
+              <li>Delicious fresh seafood straight from the coast</li>
+              <li>Evenings filled with live barbecue and bonfire</li>
+            </ul>
           </div>
         </div>
 
-       
+        <div class="col-md-6">
+          <div id="aboutSlideshow" class="about-slideshow" aria-label="About images slideshow" role="img">
+            <img class="slide active" src="./image/Shrushti see villa/IMG-20250908-WA0021.jpg" alt="Shrushti Sea Resort view" loading="lazy">
+            <img class="slide" src="./image/Shrushti see villa/IMG-20250908-WA0022.jpg" alt="Shrushti Sea Resort pool" loading="lazy">
+            <img class="slide" src="./image/Shrushti see villa/IMG-20250908-WA0008.jpg" alt="Shrushti Sea Resort restaurant" loading="lazy">
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Other locations + socials -->
-      <div class="footer-col other-col">
-        
+  <!-- facilities -->
+  <section class="facilities_area section_gap" role="region" aria-label="Facilities">
+    <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
+    <div class="container">
+      <div class="section_title text-center">
+        <h2 class="title_w">Facilities</h2>
+        <p>Who are in extremely love with eco friendly system.</p>
+      </div>
+      <div class="row mb_30">
+        <div class="col-lg-4 col-md-6">
+          <div class="facilities_item">
+            <h4 class="sec_h4"><i class="lnr lnr-dinner"></i> Restaurant</h4>
+            <p>Delight in a variety of cuisines with our Veg, Non-Veg, and fresh Seafood.</p>
+          </div>
+        </div>
 
-        <div class="socials">
-          <a class="social-link" href="https://www.instagram.com/riotel_hotel/" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
-          <a class="social-link" href="https://wa.me/917030806399" target="_blank" aria-label="WhatsApp"><i class="fa fa-whatsapp"></i></a>
+        <div class="col-lg-4 col-md-6">
+          <div class="facilities_item">
+            <h4 class="sec_h4"><i class="lnr lnr-smile"></i> Children Play Area</h4>
+            <p>A safe and joyful space where kids can play, explore, and make memories.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="facilities_item">
+            <h4 class="sec_h4"><i class="lnr lnr-car"></i> Parking</h4>
+            <p>Spacious and secure parking available for all our guests.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="facilities_item">
+            <h4 class="sec_h4"><i class="lnr lnr-drop"></i> Swimming Pool</h4>
+            <p>Unwind and refresh in our crystal-clear swimming pool, perfect for a relaxing dip or a fun splash with family & friends.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="facilities_item">
+            <h4 class="sec_h4"><i class="lnr lnr-sun"></i> Beachfront Resort</h4>
+            <p>Wake up to the sound of waves and enjoy direct access to the beach just steps away from your stay.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="facilities_item">
+            <h4 class="sec_h4"><i class="lnr lnr-laptop-phone"></i> Gaming Room</h4>
+            <p>Have fun indoors with our fully equipped gaming room, designed for guests of all ages.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="footer-area section_gap" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col contact-col">
+          <h4 class="footer-title">Get In Touch</h4>
+          <ul class="contact-icons" aria-label="Contact information">
+            <li>
+              <span class="icon-wrap"><i class="fa fa-whatsapp" aria-hidden="true"></i></span>
+              <div class="contact-text">
+                <a href="https://wa.me/917030806399?text=Hello%20Riotel" target="_blank" rel="noopener">WhatsApp</a>
+                <div class="small">+91 7030806399 / +91 7030806315</div>
+              </div>
+            </li>
+
+            <li>
+              <span class="icon-wrap"><i class="fa fa-phone" aria-hidden="true"></i></span>
+              <div class="contact-text">
+                <a href="tel:+917030806399">Call</a>
+                <div class="small">+91 7030806399 / +91 7030806315</div>
+              </div>
+            </li>
+
+            <li>
+              <span class="icon-wrap"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+              <div class="contact-text">
+                <a href="mailto:riotelhotel@gmail.com">Email</a>
+                <div class="small">riotelhotel@gmail.com</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col location-col">
+          <h4 class="footer-title">Locations</h4>
+          <div class="location">
+            <i class="fa fa-map-marker loc-icon" aria-hidden="true"></i>
+            <div class="location-text">
+              <strong>Shrushti Sea Villa</strong>
+              <div class="small">Satyavan Savitri Pakhadi Road, Shivaji Maharaj Chowk, Diveaghar 402404</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-col other-col">
+          <div class="socials" aria-label="Social links">
+            <a class="social-link" href="https://www.instagram.com/riotel_hotel/" target="_blank" aria-label="Instagram" rel="noopener"><i class="fa fa-instagram"></i></a>
+            <a class="social-link" href="https://wa.me/917030806399" target="_blank" aria-label="WhatsApp" rel="noopener"><i class="fa fa-whatsapp"></i></a>
+          </div>
         </div>
       </div>
 
+      <div class="footer-bottom">
+        <p class="footer-copy">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | RIOTEL</p>
+        <p class="footer-credit">Designed &amp; Managed by Riotel</p>
+      </div>
     </div>
+  </footer>
 
-    <div class="footer-bottom">
-      <p class="footer-copy">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | RIOTEL</p>
-      <p class="footer-credit">Designed &amp; Managed by Riotel</p>
-    </div>
-  </div>
-</footer>
+  <!-- scripts (matching home) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 
-<!--================ End footer Area  =================-->
-        
-        
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="js/jquery-3.2.1.min.js"></script>
-        <script src="js/popper.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-        <script src="js/jquery.ajaxchimp.min.js"></script>
-        <script src="vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.js"></script>
-        <script src="vendors/nice-select/js/jquery.nice-select.js"></script>
-        <script src="js/mail-script.js"></script>
-        <script src="js/stellar.js"></script>
-        <script src="vendors/lightbox/simpleLightbox.min.js"></script>
-        <script src="js/custom.js"></script>
-        <script>
-document.addEventListener('DOMContentLoaded', function () {
-  // settings
-  const intervalMs = 3500; // change image every 3.5s
-  const container = document.getElementById('aboutSlideshow');
-  if (!container) return;
+  <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="js/jquery.ajaxchimp.min.js"></script>
+  <script src="vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.js"></script>
+  <script src="vendors/nice-select/js/jquery.nice-select.js"></script>
+  <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+  <script src="js/stellar.js"></script>
+  <script src="js/custom.js"></script>
 
-  // collect slides (the img elements inside container)
-  const slides = Array.from(container.querySelectorAll('img.slide'));
-  if (slides.length <= 1) return; // nothing to rotate
+  <!-- slideshow & floats JS (defensive) -->
+  <script>
+    // slideshow for about images (defensive)
+    document.addEventListener('DOMContentLoaded', function () {
+      var container = document.getElementById('aboutSlideshow');
+      if (!container) return;
 
-  // preload images (already loaded by browser when in DOM, but keep for safety)
-  slides.forEach(img => {
-    const i = new Image();
-    i.src = img.src;
-  });
+      var slides = Array.from(container.querySelectorAll('img.slide'));
+      if (slides.length <= 1) return;
 
-  let idx = slides.findIndex(s => s.classList.contains('active'));
-  if (idx === -1) idx = 0; // default start
+      slides.forEach(function(s){ s.style.opacity = (s.classList.contains('active') ? '1' : '0'); });
 
-  // rotation loop
-  const timer = setInterval(() => {
-    // remove active from current
-    slides[idx].classList.remove('active');
+      var idx = slides.findIndex(function(s){ return s.classList.contains('active'); });
+      if (idx === -1) idx = 0;
 
-    // next index
-    idx = (idx + 1) % slides.length;
+      var intervalMs = 3500;
+      var timer = setInterval(function(){
+        slides[idx].classList.remove('active');
+        slides[idx].style.opacity = '0';
+        idx = (idx + 1) % slides.length;
+        slides[idx].classList.add('active');
+        slides[idx].style.opacity = '1';
+      }, intervalMs);
 
-    // add active to next
-    slides[idx].classList.add('active');
-  }, intervalMs);
+      container.addEventListener('mouseenter', function(){ clearInterval(timer); }, { once: true });
+    });
 
-  // optional: pause on hover (desktop)
-  container.addEventListener('mouseenter', () => clearInterval(timer), { once: true });
-});
-</script>
+    // floating contact toggles (defensive)
+    (function(){
+      var phoneToggle = document.getElementById('phoneToggle');
+      var phonePop = document.getElementById('phonePopout');
+      var waToggle = document.getElementById('waToggle');
+      var waPop = document.getElementById('waPopout');
 
-    </body>
+      function closeAll() {
+        if (phonePop) { phonePop.classList.remove('show'); phonePop.setAttribute('aria-hidden','true'); }
+        if (phoneToggle) phoneToggle.setAttribute('aria-expanded','false');
+        if (waPop) { waPop.classList.remove('show'); waPop.setAttribute('aria-hidden','true'); }
+        if (waToggle) waToggle.setAttribute('aria-expanded','false');
+      }
+
+      if (phoneToggle && phonePop) {
+        phoneToggle.addEventListener('click', function(e){
+          e.stopPropagation();
+          var open = phonePop.classList.contains('show');
+          closeAll();
+          if (!open) { phonePop.classList.add('show'); phonePop.setAttribute('aria-hidden','false'); phoneToggle.setAttribute('aria-expanded','true'); }
+        });
+        phonePop.addEventListener('click', function(e){ e.stopPropagation(); });
+      }
+
+      if (waToggle && waPop) {
+        waToggle.addEventListener('click', function(e){
+          e.stopPropagation();
+          var open = waPop.classList.contains('show');
+          closeAll();
+          if (!open) { waPop.classList.add('show'); waPop.setAttribute('aria-hidden','false'); waToggle.setAttribute('aria-expanded','true'); }
+        });
+        waPop.addEventListener('click', function(e){ e.stopPropagation(); });
+      }
+
+      document.addEventListener('click', closeAll);
+      document.addEventListener('keydown', function(ev){ if(ev.key === 'Escape' || ev.key === 'Esc') closeAll(); });
+
+      [phoneToggle, waToggle].forEach(function(btn){
+        if (!btn) return;
+        btn.addEventListener('keydown', function(e){
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); }
+        });
+      });
+    })();
+  </script>
+</body>
 </html>
